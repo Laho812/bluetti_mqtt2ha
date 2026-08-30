@@ -9,10 +9,10 @@ COPY rootfs /
 # Note: openssl-dev is the Alpine equivalent of libssl-dev
 # Note: Removing bluez version pin initially - add back if needed and available
 RUN apk add --no-cache --force-overwrite \
-    openssl=3.5.2-r0 \
-    openssl-dev=3.5.2-r0 \
-    libcrypto3=3.5.2-r0 \
-    libssl3=3.5.2-r0
+    openssl \
+    openssl-dev \
+    libcrypto3 \
+    libssl3
 
 RUN apk add --no-cache \
     git \
