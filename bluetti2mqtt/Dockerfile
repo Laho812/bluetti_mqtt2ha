@@ -19,8 +19,7 @@ RUN apk add --no-cache \
     build-base \
     python3-dev \
     libffi-dev \
-    cargo \
-    bluez
+    cargo
 
 # Install pip dependencies FIRST with explicit versions
 RUN pip install --no-cache-dir --upgrade pip && \
