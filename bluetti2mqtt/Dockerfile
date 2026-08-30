@@ -14,12 +14,12 @@ RUN apk add --no-cache --force-overwrite \
     libcrypto3 \
     libssl3
 
-RUN apk add --no-cache \
-    git \
-    build-base \
-    python3-dev \
-    libffi-dev \
-    cargo
+RUN apk add --no-cache git 
+RUN apk add --no-cache build-base 
+RUN apk add --no-cache python3-dev
+RUN apk add --no-cache libffi-dev
+RUN apk add --no-cache cargo
+RUN apk add --no-cache bluez
 
 # Install pip dependencies FIRST with explicit versions
 RUN pip install --no-cache-dir --upgrade pip && \
