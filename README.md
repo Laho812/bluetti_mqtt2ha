@@ -1,7 +1,7 @@
-# Bluetti2MQTT-jesherman fork - but updated
+# Bluetti_MQTT2ha
 
-This is a fork of Bluetti2MQTT which hacks together a few fixes based on prior people's own fixes so that it works as of April 2025:
-
+This is a updated fork of Bluetti2MQTT which hacks together a few fixes based on prior people's own fixes so that it works as of August 2026:
+- Continued based on latest version of jesherman
 - Support for encryption (thanks @nhurman!) and newer devices (e.g. AC180)
 - Tweaks to fix nhurman's version of bluetti_mqtt to support the last version of asyncio_mqtt which handles filtered_messages (14.0) and adds some pip dependencies (e.g. cryptography and specific supported versions of other stuff)
 - Updated python images for this addon to fix build support in GitHub
@@ -14,13 +14,13 @@ Add this URL to your Home Assistant Repository:
 https://github.com/Laho812/bluetti_mqtt2ha
 ```
 
-Refresh the page (hard refresh may be required), scroll down to Bluetti2MQTT and install the add-on.
+Refresh the page (hard refresh may be required), scroll down to Bluetti_MQTT2ha and install the add-on.
 
 ## Add-ons
 
 This repository contains the following add-ons:
 
-### [Bluetti2MQTT](./bluetti2mqtt)
+### [Bluetti_MQTT2ha](./bluetti2mqtt)
 
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]

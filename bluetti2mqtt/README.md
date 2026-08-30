@@ -1,4 +1,4 @@
-# Bluetti2MQTT
+# Bluetti_MQTT2ha
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 ![Supports armhf Architecture][armhf-shield]
@@ -7,9 +7,10 @@
 
 MQTT bridge between Bluetti and Home Assistant.
 
-This is a simple Home Assistant add-on for [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt).
+This is a simple Home Assistant add-on for [bluetti_mqtt](https://github.com/Laho812/bluetti_mqtt).
+It is an updated version of the original [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt) from warhammerkid.
 
-This add-on was created as an easy method to get Bluetti data into Home Assistant, without having to setup [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt) on a separate device.
+This add-on was created as an easy method to get Bluetti data into Home Assistant, without having to setup [bluetti_mqtt](https://github.com/Laho812/bluetti_mqtt) on a separate device.
 
 ___
 

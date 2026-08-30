@@ -1,10 +1,11 @@
-# Bluetti2MQTT
+# Bluetti_MQTT2ha
 
 MQTT bridge between Bluetti and Home Assistant.
 
-This is a simple Home Assistant add-on for [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt).
+This is a simple Home Assistant add-on for [bluetti_mqtt](https://github.com/Laho812/bluetti_mqtt).
 
-This add-on was created as an easy method to get Bluetti data into Home Assistant, without having to setup [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt) on a separate device.
+This add-on was created as an easy method to get Bluetti data into Home Assistant, without having to setup [bluetti_mqtt](https://github.com/Laho812/bluetti_mqtt) on a separate device.
+It is a fork of [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt) by warhammerkid but it works as of August 2026.
 
 ___
 
@@ -87,6 +88,7 @@ ___
 
 For more information, please refer to the following:
 
-- Github repository: [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt)
-
+- Github repository: [bluetti_mqtt](https://github.com/Laho812/bluetti_mqtt)
+- Github repository (original): [bluetti_mqtt](https://github.com/warhammerkid/bluetti_mqtt)
 - DIY Solar Forum: [Monitoring Bluetti Systems](https://diysolarforum.com/threads/monitoring-bluetti-systems.37870/)
+- 

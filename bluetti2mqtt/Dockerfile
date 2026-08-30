@@ -33,7 +33,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pyserial==3.5 \
         prometheus_client==0.20.0
 
-RUN pip install --no-cache-dir --no-deps git+https://github.com/Laho812/bluetti_mqtt.git@main
+RUN pip install --no-cache-dir --no-deps git+https://github.com/Laho812/bluetti_mqtt.git
 
 # Set permissions for run script
 RUN chmod a+x /run.sh
