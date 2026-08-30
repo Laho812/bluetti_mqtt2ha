@@ -58,13 +58,20 @@ jobs:
             echo "Changed add-ons: $changed";
             echo "changed=true" >> $GITHUB_OUTPUT;
             echo "addons=[$changed]" >> $GITHUB_OUTPUT;
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "Manual build requested - building bluetti2mqtt";
+            echo "changed=true" >> $GITHUB_OUTPUT;
+            echo 'addons=["bluetti2mqtt"]' >> $GITHUB_OUTPUT;
           else
             echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
+            echo "changed=false" >> $GITHUB_OUTPUT;
+            echo 'addons=[]' >> $GITHUB_OUTPUT;
           fi
+
   build:
     needs: init
     runs-on: ubuntu-latest
-    if: needs.init.outputs.changed == 'true'
+    if: needs.init.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
     name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
     strategy:
       matrix:
@@ -85,12 +92,12 @@ jobs:
         id: check
         run: |
           if [[ "${{ steps.info.outputs.architectures }}" =~ ${{ matrix.arch }} ]]; then
-             echo "build_arch=true" >> $GITHUB_OUTPUT;
-             echo "image=$(echo ${{ steps.info.outputs.image }} | cut -d'/' -f3)" >> $GITHUB_OUTPUT;
-             if [[ -z "${{ github.head_ref }}" ]] && [[ "${{ github.event_name }}" == "push" ]]; then
-                 echo "BUILD_ARGS=" >> $GITHUB_ENV;
-             fi
-           else
+            echo "build_arch=true" >> $GITHUB_OUTPUT;
+            echo "image=$(echo ${{ steps.info.outputs.image }} | cut -d'/' -f3)" >> $GITHUB_OUTPUT;
+            if [[ "${{ github.event_name }}" == "push" ]] || [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+                echo "BUILD_ARGS=" >> $GITHUB_ENV;
+            fi
+          else
              echo "${{ matrix.arch }} is not a valid arch for ${{ matrix.addon }}, skipping build";
              echo "build_arch=false" >> $GITHUB_OUTPUT;
           fi
