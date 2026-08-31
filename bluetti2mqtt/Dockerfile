@@ -14,12 +14,13 @@ RUN apk add --no-cache --force-overwrite \
     libcrypto3 \
     libssl3
 
-RUN apk add --no-cache git 
-RUN apk add --no-cache build-base 
-RUN apk add --no-cache python3-dev
-RUN apk add --no-cache libffi-dev
-RUN apk add --no-cache cargo
-RUN apk add --no-cache bluez
+RUN apk add --no-cache \
+    git \
+    build-base \
+    python3-dev \
+    libffi-dev \
+    cargo \
+    bluez
 
 # Install pip dependencies FIRST with explicit versions
 RUN pip install --no-cache-dir --upgrade pip && \
@@ -33,7 +34,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pyserial==3.5 \
         prometheus_client==0.20.0
 
-RUN pip install --no-cache-dir --no-deps git+https://github.com/Laho812/bluetti_mqtt.git
+RUN pip install --no-cache-dir --no-deps git+https://github.com/desalvo/bluetti_mqtt.git@v2devices
 
 # Set permissions for run script
 RUN chmod a+x /run.sh
